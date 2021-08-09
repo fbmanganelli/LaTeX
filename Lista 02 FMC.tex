@@ -1,0 +1,191 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[lmargin=3cm,tmargin=3cm,rmargin=2cm,bmargin=2cm]{geometry} 
+\usepackage[T1]{fontenc} 
+\usepackage{amsmath,amsthm,amsfonts,amssymb,dsfont,mathtools,blindtext} %pacotes matemáticos
+\usepackage{blindtext}
+\usepackage{graphicx}
+
+\begin{document}
+\title{\textbf{Lista 2 - Fundamentos de Matemática para Computação} \\\vspace{5}\small UFG - Instituto de Informática\\\large Professor Dr. Julliano Rosa Nascimento}
+\author{Alessandra dos Santos Morais, Filipe Brito Manganelli,\\Iury Alexandre Alves Bó, Nelsi de Sousa Barbosa Junior}
+\date{9 de agosto de 2021}
+\maketitle
+
+
+\begin{itemize} %função para organizar as questões em itens
+    \item [] \textbf{Questão 1 -} Encontre as fórmulas ou regra simples para construir uma sequência de inteiros que comece com a lista dada. Assumindo que sua resposta esteja correta, determine os três próximos termos da sequência. %para cada questão criar um item desse modelo com o enunciado da questão
+    \
+     \\\\\textbf{a)} 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, . . . %criar um texto dessa forma para cada item das questões
+     \\\\Resolução:
+     \\\\Podemos representar a fórmula dessa sequência como $A_n=\lfloor\sqrt{2\cdot n}+1/2\rfloor$
+     \\em que, $A_n$ = o termo da sequência; $n$ = posição do termo, começando com $n=1$.
+     \\\\Próximos três termos:
+     \\\\$A_1_1=\lfloor\sqrt{2\cdot 11}+0,5\rfloor$
+     \\$A_1_1=\lfloor4,69+0,5\rfloor$
+     \\$A_1_1=\lfloor5,19\rfloor$
+     \\$A_1_1=5$ 
+    \\\\$A_1_2=\lfloor\sqrt{2\cdot 12}+0,5\rfloor$
+     \\$A_1_2=\lfloor4,89+0,5\rfloor$
+     \\$A_1_2=\lfloor5,39\rfloor$
+     \\$A_1_2=5$ 
+    \\\\$A_1_3=\lfloor\sqrt{2\cdot 13}+0,5\rfloor$
+     \\$A_1_3=\lfloor5,09+0,5\rfloor$
+     \\$A_1_3=\lfloor5,59\rfloor$
+     \\$A_1_3=5$ 
+     
+     \\\\
+     \newpage
+     \textbf{b)} 1, 10, 11, 100, 101, 110, 111, 1000, 1001, 1010, 1011, . . .
+     \\\\Resolução:
+     \\\\Podemos representar a fórmula dessa sequência binária como $A_n=n+1$
+     \\sendo uma Progressão Aritmética(P.A) de razão = 1
+     \\em que, $A_n$ = o termo da sequência (na base 2); $n$ = posição do termo, começando com $n=0$.
+     \\\\Próximos três termos:
+     \\\\$A_1_1=1011_2+1_2 = 1100_2$
+     \\\\$A_1_2=1100_2+1_2 = 1101_2$
+     \\\\$A_1_3=1101_2+1_2 = 1110_2$
+     \\
+     
+     \\\\
+     \\\\\textbf{c)} 1, 3, 15, 105, 945, 10395, 135135, 2027025, 34459425, . . .
+     \\\\Resolução:
+    \\\\Podemos representar a fórmula dessa sequência como $A_n=A_n_-_1\cdot (3+2\cdot (n-1))$
+    \\em que, $A_n$ = o termo da sequência; $n$ = posição do termo, começando com $n=0$ e $A_0=1$.
+     \\\\Próximos três termos:
+     \\\\$A_9=A_8\cdot (3+2\cdot (9-1))$
+     \\$A_9=34459425\cdot (3+2\cdot 8)$
+     \\$A_9=34459425\cdot 19$
+     \\$A_9=654729075$
+     \\\\$A_1_0=A_9\cdot (3+2\cdot (10-1))$
+     \\$A_1_0=654729075\cdot (3+2\cdot 9)$
+     \\$A_1_0=654729075\cdot 21$
+     \\$A_1_0=13749310575$
+     \\\\$A_1_1=A_1_0\cdot (3+2\cdot (11-1))$
+     \\$A_1_1=13749310575\cdot (3+2\cdot 10)$
+     \\$A_1_1=13749310575\cdot 23$
+     \\$A_1_1=316234143225$
+     \\
+     
+     \\\\ 
+     \item [] \textbf{Questão 2 -} Encontre uma fórmula fechada para:
+     \\
+     
+     \begin{centering}
+     
+     $\dfrac{1}{1\cdot 2} + \dfrac{1}{2\cdot 3} + ... + \dfrac{1}{n\cdot (n + 1)}$
+     
+     \end{centering}
+     
+     examinando os valores dessa expressão para pequenos valores de n.
+     \newline
+    Para encontrar a resposta, você deve testar para alguns valores de n, por exemplo:
+    
+    \item Para $n = 1$, temos que $\frac{1}{1\cdot 2} = \frac{1}{2}$
+    \item Para $n = 2$, temos que $\frac{1}{1\cdot 2} + \frac{1}{2\cdot 3} = \frac{1}{2} + \frac{1}{6} = \frac{4}{6} = \frac{2}{3}$
+    \item Para $n = 3$, temos que $\frac{1}{1\cdot 2} + \frac{1}{2\cdot 3} + \frac{1}{3\cdot 4} = \frac{1}{2} + \frac{1}{6} + \frac{1}{12} = \frac{9}{12} = \frac{3}{4}$
+    \item ...
+    \\\\Resolução:
+    \\\\Podemos representar esse somatório como $A_n=\sum\limits_{j=1}^n \frac{1}{j\cdot (j+1)}$
+    \\Seguindo a lógica dada pelo exercício temos a sequência até o $6^o$ termo como
+    \begin{center}
+    $\left(\dfrac{1}{2},\dfrac{2}{3},\dfrac{3}{4},\dfrac{4}{5},\dfrac{5}{6},\dfrac{6}{7}\right)$
+    \end{center}
+    Observando o padrão da sequência podemos concluir a fórmula $A_n=\dfrac{n}{n+1}$
+    \\começando com $n=1$.
+    
+    
+    \\\\
+    \item[] \textbf{Questão 3 -} Encontre as fórmulas fechadas para as sequências com os seguintes termos:
+    \\\\
+    \textbf{a)} $1 + 2 + 4 + 8 + 16 + 32 + 64 + ... + 2^n$
+    \\\\Resolução:
+    
+    
+    
+    \\\\
+    \\\\
+    \textbf{b)} $1\cdot 1! + 2\cdot 2! + ... + n\cdot n!$
+    \\\\Resolução:
+    \\\\
+    \\\\
+    \textbf{c)} $1 + \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} + \frac{1}{2} + \frac{1}{\sqrt{5}} + ... + \frac{1}{\sqrt{n}}$
+    \\\\Resolução:
+    \\\\
+    \\\\
+    \textbf{d)} $\frac{3}{2} + \frac{3}{4} + \frac{3}{8} + \frac{3}{16} + ... + \frac{3}{2^n}$
+    \\\\Resolução:
+    \\\\
+    \\\\
+    \textbf{e)} $\frac{1}{3} + \frac{1}{9} + \frac{1}{27} + \frac{1}{81} + \frac{1}{243} + ... + \frac{1}{3^n}$
+    \\\\Resolução:
+    \\\\
+    \\\\
+    \item[] \textbf{Questão 4 -} Encontre o valor de cada uma das somas e produtos a seguir:
+    \\\
+    \item[] \textbf{a)} $\sum\limits_{j=0}^8 (1 + (-1)^j)$
+    \\\\Resolução:
+    \\\\
+    \\\\\item[] \textbf{b)} $\sum\limits_{j=0}^8 (3^j - 2^j)$
+    \\\\Resolução:
+    \\\\
+    \\\\\item[] \textbf{c)} $\sum\limits_{i=1}^5 \frac{1}{(2\cdot i - 1)\cdot (2\cdot i + 1)}$
+    \\\\Resolução:
+    \\\\
+    \\\\\item[] \textbf{d)} $\prod\limits_{i=5}^{10} i$
+    \\\\Resolução:
+    \\\\
+    \\\\\item[] \textbf{e)} $\prod\limits_{i=1}^8 i$
+    \\\\Resolução:
+    \\\\
+    \item[] \textbf{Questão 5 -} Encontre os somatórios para as sequências com os seguintes termos:
+    \\\\\textbf{a)} $1 + 2 + 4 + 8 + 16 + 32 + 64 + ... + 2^n$
+    \\\\Resolução:
+    \\\\
+    \\\\
+    \textbf{b)} $\frac{1}{2} + \frac{1}{6} + \frac{1}{12} + ... + \frac{1}{n\cdot (n + 1)}$
+    \\\\Resolução:
+    \\\\
+    \\\\
+    \textbf{c)} $1\cdot 1! + 2\cdot 2! + ... + n\cdot n!$
+    \\\\Resolução:
+    \\\\
+    \\\\
+    \textbf{d)} $1 + \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} + \frac{1}{2} + \frac{1}{\sqrt{5}} + ... + \frac{1}{\sqrt{n}}$
+    \\\\Resolução:
+    \\\\
+    \\\\
+    \textbf{e)} $\frac{3}{2} + \frac{3}{4} + \frac{3}{8} + \frac{3}{16} + ... + \frac{3}{2^n}$
+    \\\\Resolução:
+    \\\\
+    \\\\
+    \textbf{f)} $\frac{1}{3} + \frac{1}{9} + \frac{1}{27} + \frac{1}{81} + \frac{1}{243} + ... + \frac{1}{3^n}$
+    \\\\Resolução:
+    \\\\
+    \\\\
+    \item[] \textbf{Questão 6 -} Qual é o valor para cada uma das somas abaixo dos termos de uma progressão geométrica?
+    \\\item[] \textbf{a)} $\sum\limits_{j=0}^8 3\cdot 2^j$
+    \\\\Resolução:
+    \\\\
+    \item[] \textbf{b)} $\sum\limits_{j=0}^8 2\cdot (-3)^j$
+    \\\\Resolução:
+    \\\\
+    \item[] \textbf{Questão 7 -} Sabendo que $S = \frac{1^o termo}{1 - razao}$, calcule a razão e o valor de $S$ para as progressões geométricas:
+    \\\\\textbf{a)} $1 + 2 + 4 + 8 + 16 + 32 + 64 + ... + 2^n$
+    \\\\Resolução:
+    \\\\
+    \\\\
+    \textbf{b)} $\frac{3}{2} + \frac{3}{4} + \frac{3}{8} + \frac{3}{16} + ... + \frac{3}{2^n}$
+    \\\\Resolução:
+    \\\\
+    \\\\
+    \textbf{c)} $\frac{1}{3} + \frac{1}{9} + \frac{1}{27} + \frac{1}{81} + \frac{1}{243} + ... + \frac{1}{3^n}$
+    \\\\Resolução:
+    \\\\
+    \\\\
+     
+\end{itemize}
+   
+
+\end{document}
